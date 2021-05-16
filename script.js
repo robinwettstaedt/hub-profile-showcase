@@ -7,6 +7,7 @@ const bioEl = document.querySelector('#bio');
 const reposEl = document.querySelector('#repos');
 const APIURL = 'https://api.github.com/users/';
 const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+const deviceHeight = screen.height;
 const modalPopUp = document.querySelector('#myModal');
 
 async function getData(username) {
@@ -34,7 +35,7 @@ function changeDOM(user, repos) {
     let maxRepoCount = 15;
     if (deviceWidth < 721) maxRepoCount = 12;
     if (deviceWidth < 400) maxRepoCount = 8;
-
+    if (deviceHeight < 750) maxRepoCount = 5;
 
     for (const repo of repos) {
 

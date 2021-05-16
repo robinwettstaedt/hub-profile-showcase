@@ -6,17 +6,18 @@
         --glass: rgba( 255, 255, 255, 0.1);
         --shadow: 0 8px 32px 0 rgba(15, 17, 34, 0.37);
     }
-    
-    html {
-        height: 110%
+    /* html {
+        height: 100%
     }
+     */
     
     body {
         font-family: 'Inter', sans-serif;
         color: var(--main-text-color);
         margin: 0;
-        background: var(--gradient);
-        /* height: 100%; */
+        background-repeat: no-repeat;
+        background-image: var(--gradient);
+        background-attachment: fixed;
     }
     /* modal stuff copied from W3Schools */
     
@@ -57,19 +58,19 @@
         width: 90vw;
         height: 80vh;
         border-radius: 15px;
-        margin-top: 3rem;
+        margin-top: 1.5rem;
         margin-bottom: 0;
         overflow: hidden;
         background: var(--glass);
         box-shadow: var(--shadow);
     }
     
-    .search-label {
+    s .search-label {
         display: none;
     }
     
     .search {
-        margin-top: 3rem;
+        margin-top: 1rem;
         width: 70vw;
         border-radius: 15px;
         padding: 0.5rem 1rem;
@@ -206,44 +207,54 @@
     @media screen and (min-width: 480px) {
         .grid {
             width: 70vw;
+            margin-top: 1.5rem;
         }
         .search {
             width: 40vw;
+            margin-top: 1.5rem;
         }
     }
     
     @media screen and (min-width: 721px) {
         .grid {
             width: 60vw;
+            margin-top: 2rem;
         }
         .search {
             width: 30vw;
+            margin-top: 2rem;
         }
     }
     
     @media screen and (min-width: 1025px) {
         .grid {
             width: 50vw;
+            margin-top: 3rem;
         }
         .search {
             width: 30vw;
+            margin-top: 3rem;
         }
     }
     
     @media screen and (min-width: 1201px) {
         .grid {
             width: 40vw;
+            margin-top: 3rem;
         }
         .search {
             width: 25vw;
+            margin-top: 3rem;
         }
     }
     
     @media screen and (min-width: 1501px) {
         .grid {
             width: 30vw;
+            margin-top: 3rem;
         }
         .search {
             width: 20vw;
+            margin-top: 3rem;
         }
     }

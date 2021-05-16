@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window resize example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="form">
+            <label class="search-label" for="search" aria-label="search window"></label>
+            <input type="text" id="search" class="search" name="search" placeholder="Enter a GitHub Username">
+        </form>
+        <div class="grid">
+            <div class="top-row">
+                <div class="back-btn">
+                    <div class="triangle"></div>
+                    <div class="hr"></div>
+                </div>
+                <div class="heart-btn"></div>
+                <div class="dots-btn">
+                    <div class="top-dot"></div>
+                    <div class="mid-dot"></div>
+                    <div class="bott-dot"></div>
+                </div>
+            </div>
+            <div class="picture" id="picture"> <img id="image" src="white.jpg" alt="profil picture of the user"></div>
+            <div class="full-name" id="full-name"></div>
+            <div class="username" id="username"></div>
+            <div class="bio" id="bio"> </div>
+            <div class="repos" id="repos"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

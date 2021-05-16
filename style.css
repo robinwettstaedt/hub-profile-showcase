@@ -1,190 +1,249 @@
-:root {
-    --buttons-color: rgb(197, 197, 197);
-    --main-text-color: rgb(80, 80, 80);
-    --gradient: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
-}
-
-body {
-    font-family: roboto;
-    color: var(--main-text-color);
-    margin: 0;
-    background: rgb(63, 94, 251);
-    background: var(--gradient);
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid {
-    display: grid;
-    grid-template-areas: "top-row top-row top-row top-row" "picture picture picture picture" "name name name name" "username username username username" "bio bio bio bio" "repos repos repos repos";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 5fr 2fr 2fr 2fr 4fr;
-    min-width: 25rem;
-    max-width: 35rem;
-    height: 80vh;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 12px 13px rgba(0, 0, 0, 0.16), 0 12px 13px rgba(0, 0, 0, 0.16);
-    margin-top: 3rem;
-}
-
-.search-label {
-    display: none;
-}
-
-.search {
-    margin-top: 3rem;
-    width: 20rem;
-    border-radius: 15px;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: text;
-    outline: none;
-}
-
-.top-row {
-    grid-area: top-row;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 1rem 0 0 0;
-}
-
-.back-btn {
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hr {
-    height: 0.5rem;
-    width: 0.7rem;
-    background: var(--buttons-color);
-}
-
-.triangle {
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-right: 13px solid var(--buttons-color);
-}
-
-.heart-btn {
-    background: var(--buttons-color);
-    position: relative;
-    height: 1rem;
-    width: 1rem;
-    transform: rotate(-45deg) scale(1);
-    margin-right: 1rem;
-}
-
-.heart-btn::after {
-    background: inherit;
-    border-radius: 50%;
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: 0;
-    height: 1rem;
-    width: 1rem;
-}
-
-.heart-btn::before {
-    background: inherit;
-    border-radius: 50%;
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -50%;
-    height: 1rem;
-    width: 1rem;
-}
-
-.dots-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1rem 0 0;
-}
-
-.top-dot {
-    height: 0.5rem;
-    width: 0.5rem;
-    background: var(--buttons-color);
-    border-radius: 50%;
-    margin-bottom: 0.1rem;
-}
-
-.mid-dot {
-    height: 0.5rem;
-    width: 0.5rem;
-    background: var(--buttons-color);
-    border-radius: 50%;
-    margin-bottom: 0.2rem;
-}
-
-.bott-dot {
-    height: 0.5rem;
-    width: 0.5rem;
-    background: var(--buttons-color);
-    border-radius: 50%;
-}
-
-.picture {
-    grid-area: picture;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.picture img {
-    height: 200px;
-    width: 200px;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 8px 9px rgba(0, 0, 0, 0.16), 0 8px 9px rgba(0, 0, 0, 0.16);
-}
-
-.full-name {
-    grid-area: name;
-    text-align: center;
-    font-size: 3rem;
-    margin-top: 1.5rem;
-}
-
-.username {
-    grid-area: username;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.bio {
-    grid-area: bio;
-    text-align: center;
-    font-size: 1rem;
-    margin: 0 1rem;
-}
-
-.repos {
-    margin: 1rem 0.5rem;
-    grid-area: repos;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.repo {
-    align-self: center;
-    background: var(--buttons-color);
-    border-radius: 20px;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
-    text-decoration: none;
-    color: var(--main-text-color);
-}
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+     :root {
+        --buttons-color: rgba( 255, 255, 255, 0.5);
+        --main-text-color: rgb(236, 236, 236);
+        --gradient: linear-gradient(to bottom right, #43CBFF, #9708CC);
+        --glass: rgba( 255, 255, 255, 0.1);
+        --shadow: 0 8px 32px 0 rgba(15, 17, 34, 0.37);
+    }
+    
+    html {
+        height: 100%
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        color: var(--main-text-color);
+        margin: 0;
+        background: var(--gradient);
+        min-height: 100%;
+    }
+    /* modal stuff copied from W3Schools */
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        width: 80vw;
+        height: 20vh;
+        margin: 40vh 10vw;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    .err-msg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-areas: "top-row top-row top-row top-row" "picture picture picture picture" "name name name name" "username username username username" "bio bio bio bio" "repos repos repos repos";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 5fr 2fr 2fr 2fr 4fr;
+        width: 90vw;
+        height: 80vh;
+        border-radius: 15px;
+        margin-top: 3rem;
+        margin-bottom: 0;
+        overflow: hidden;
+        background: var(--glass);
+        box-shadow: var(--shadow);
+    }
+    
+    .search-label {
+        display: none;
+    }
+    
+    .search {
+        margin-top: 3rem;
+        width: 70vw;
+        border-radius: 15px;
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: text;
+        outline: none;
+        box-shadow: var(--shadow);
+        color: var(--main-text-color);
+        background-color: var(--glass);
+    }
+    
+    input::placeholder {
+        color: var(--main-text-color);
+    }
+    
+    .top-row {
+        grid-area: top-row;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 1rem 0 0 0;
+    }
+    
+    .back-btn {
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hr {
+        height: 0.5rem;
+        width: 0.7rem;
+        background: var(--buttons-color);
+    }
+    
+    .triangle {
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-right: 13px solid var(--buttons-color);
+    }
+    
+    .heart-btn {
+        height: 2.2rem;
+        width: 2.2rem;
+        margin-right: 0.5rem;
+        color: var(--buttons-color);
+    }
+    
+    .dots-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1rem 0 0;
+    }
+    
+    .top-dot {
+        height: 0.5rem;
+        width: 0.5rem;
+        background: var(--buttons-color);
+        border-radius: 50%;
+        margin-bottom: 0.1rem;
+    }
+    
+    .mid-dot {
+        height: 0.5rem;
+        width: 0.5rem;
+        background: var(--buttons-color);
+        border-radius: 50%;
+        margin-bottom: 0.2rem;
+    }
+    
+    .bott-dot {
+        height: 0.5rem;
+        width: 0.5rem;
+        background: var(--buttons-color);
+        border-radius: 50%;
+    }
+    
+    .picture {
+        grid-area: picture;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .picture img {
+        height: 10rem;
+        width: 10rem;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: var(--shadow);
+    }
+    
+    .full-name {
+        grid-area: name;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
+    
+    .username {
+        grid-area: username;
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .bio {
+        grid-area: bio;
+        text-align: center;
+        font-size: 1rem;
+        margin: 0 1rem;
+    }
+    
+    .repos {
+        margin: 1rem 0.5rem 1.5rem 0.5rem;
+        grid-area: repos;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .repo {
+        align-self: center;
+        background: var(--glass);
+        border-radius: 20px;
+        padding: 0.5rem;
+        margin: 0.3rem 0.5rem;
+        text-decoration: none;
+        color: var(--main-text-color);
+    }
+    
+    @media screen and (min-width: 480px) {
+        .grid {
+            width: 70vw;
+        }
+        .search {
+            width: 40vw;
+        }
+    }
+    
+    @media screen and (min-width: 721px) {
+        .grid {
+            width: 60vw;
+        }
+        .search {
+            width: 30vw;
+        }
+    }
+    
+    @media screen and (min-width: 1025px) {
+        .grid {
+            width: 50vw;
+        }
+        .search {
+            width: 30vw;
+        }
+    }
+    
+    @media screen and (min-width: 1201px) {
+        .grid {
+            width: 40vw;
+        }
+        .search {
+            width: 25vw;
+        }
+    }
+    
+    @media screen and (min-width: 1501px) {
+        .grid {
+            width: 30vw;
+        }
+        .search {
+            width: 20vw;
+        }
+    }

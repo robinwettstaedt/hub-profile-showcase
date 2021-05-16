@@ -4,11 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Window resize example</title>
+    <title>GitHub Profile Showcase</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div id="myModal" class="modal">
+        <div class="msg-container">
+            <span class="err-msg">No such user on GitHub! Press anywhere to dismiss.</span>
+        </div>
+    </div>
     <div class="container">
         <form id="form">
             <label class="search-label" for="search" aria-label="search window"></label>
@@ -20,21 +25,22 @@
                     <div class="triangle"></div>
                     <div class="hr"></div>
                 </div>
-                <div class="heart-btn"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 heart-btn" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
                 <div class="dots-btn">
                     <div class="top-dot"></div>
                     <div class="mid-dot"></div>
                     <div class="bott-dot"></div>
                 </div>
             </div>
-            <div class="picture" id="picture"> <img id="image" src="white.jpg" alt="profil picture of the user"></div>
+            <div class="picture" id="picture"> <img id="image" src="white.jpg" alt="profile picture of the user"></div>
             <div class="full-name" id="full-name"></div>
             <div class="username" id="username"></div>
             <div class="bio" id="bio"> </div>
             <div class="repos" id="repos"></div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
